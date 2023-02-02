@@ -1,4 +1,8 @@
+const openFormBtn = document.querySelector(".open-form-btn");
 const booksList = document.querySelector(".books-list");
+const overlay = document.querySelector(".overlay");
+const addBookForm = document.querySelector(".add-book-form");
+const AddBookBtn = document.querySelector(".add-book-btn");
 
 let myLibrary = [];
 

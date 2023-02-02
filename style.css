@@ -1,5 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 229, 225);
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+  background-color: rgb(9, 102, 105);
+  color: white;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  padding: 0.5rem 2rem;
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+
+.open-form-btn {
+  background-color: transparent;
+  color: white;
+  transition: 0.4s ease;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.open-form-btn:hover {
+  background-color: white;
+  color: black;
+  transition: 0.4s ease;
+}
+
+.books-container {
+  padding: 6rem;
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  justify-content: center;
+  gap: 120px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  gap: 10px;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.book-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.book-author {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.book-author::before {
+  content: "by ";
+}
+
+.book-pages {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.book-pages::after {
+  content: " pages";
 }

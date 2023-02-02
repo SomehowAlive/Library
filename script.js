@@ -3,6 +3,7 @@ const booksList = document.querySelector(".books-list");
 const overlay = document.querySelector(".overlay");
 const addBookForm = document.querySelector(".add-book-form");
 const AddBookBtn = document.querySelector(".add-book-btn");
+const closeFormBtn = document.querySelector(".close-form-btn");
 
 let myLibrary = [];
 
@@ -62,7 +63,14 @@ function displayBooks() {
 
 function openForm() {
   overlay.classList.remove("hidden");
+  // this is probably wrong I now that you don't have to use setTimeout for a stupid animation to appear :(
   setTimeout(() => addBookForm.classList.remove("hidden"), 50);
 }
 
+function closeForm() {
+  overlay.classList.add("hidden");
+  addBookForm.classList.add("hidden");
+}
+
 openFormBtn.addEventListener("click", openForm);
+closeFormBtn.addEventListener("click", closeForm);

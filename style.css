@@ -76,6 +76,10 @@ header {
   animation: slide-down 0.5s ease forwards;
 }
 
+.book.read > .book-title::before {
+  content: "✅ ";
+}
+
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -85,10 +89,6 @@ header {
     opacity: 1;
     transform: translate(0);
   }
-}
-
-.book-title::before {
-  content: "✅";
 }
 .book-title {
   font-size: 1.8rem;

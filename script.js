@@ -20,6 +20,16 @@ function addBookToLibrary(book) {
   currIndex = myLibrary.length - 1;
 }
 
+function removeBookFromLibrary(index) {
+  myLibrary = myLibrary.splice(index, 1);
+}
+
+function deleteBookElem(e) {
+  const index = e.target.parentElement.getAttribute("data-id");
+  removeBookFromLibrary(index);
+  e.target.parentElement.remove();
+}
+
 function createBookElement(book, index) {
   const bookElem = document.createElement("li");
 
@@ -44,6 +54,8 @@ function createBookElement(book, index) {
   pagesELem.innerText = book.pages;
   viewBtn.innerText = "view";
   delBtn.innerText = "delete";
+
+  delBtn.addEventListener("click", deleteBookElem);
 
   bookElem.append(titleElem);
   bookElem.append(authorElem);

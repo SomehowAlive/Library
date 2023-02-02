@@ -8,42 +8,45 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Simple Library</h1>
-      <button class="open-form-btn btn">+</button>
-    </header>
-    <div class="books-container">
-      <ul class="books-list">
-        <li class="book">
-          <p class="book-title">I missed A Prayer</p>
-          <p class="book-author">Islam Jamal</p>
-          <p class="book-pages">210</p>
-          <p class="is-read"></p>
-          <button type="button" class="btn view-button">view</button>
-          <button type="button" class="btn delete-button">delete</button>
-        </li>
-      </ul>
+    <div class="main">
+      <header>
+        <h1>Simple Library</h1>
+        <button class="open-form-btn btn">+</button>
+      </header>
+      <div class="books-container">
+        <ul class="books-list">
+          <li class="book">
+            <p class="book-title">I missed A Prayer</p>
+            <p class="book-author">Islam Jamal</p>
+            <p class="book-pages">210</p>
+            <p class="is-read"></p>
+            <button type="button" class="btn view-button">view</button>
+            <button type="button" class="btn delete-button">delete</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <form class="add-book-form">
-      <h2>Add a book</h2>
-      <div>
-        <label for="title">Title</label>
-        <input class="inp" class="inp" type="text" name="title" />
-      </div>
-      <div>
-        <label for="author">Author</label>
-        <input class="inp" class="inp" type="text" name="author" />
-      </div>
-      <div>
-        <label for="pages">pages</label>
-        <input class="inp" class="inp" type="text" name="pages" />
-      </div>
-      <div>
-        <label for="finished">finished</label>
-        <input class="inp" class="inp" type="checkbox" />
-      </div>
-      <button class="add-book-btn btn">Add</button>
-    </form>
-    <div class="overlay"></div>
+    <div class="overlay">
+      <form class="add-book-form">
+        <h2>Add a book</h2>
+        <div>
+          <label for="title">Title</label>
+          <input class="inp" class="inp" type="text" name="title" />
+        </div>
+        <div>
+          <label for="author">Author</label>
+          <input class="inp" class="inp" type="text" name="author" />
+        </div>
+        <div>
+          <label for="pages">pages</label>
+          <input class="inp" class="inp" type="text" name="pages" />
+        </div>
+        <div>
+          <label for="finished">finished</label>
+          <input class="inp" class="inp" type="checkbox" />
+        </div>
+        <button class="add-book-btn btn">Add</button>
+      </form>
+    </div>
   </body>
 </html>

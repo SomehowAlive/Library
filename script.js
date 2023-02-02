@@ -6,6 +6,7 @@ const AddBookBtn = document.querySelector(".add-book-btn");
 const closeFormBtn = document.querySelector(".close-form-btn");
 
 let myLibrary = [];
+let currIndex = -1;
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -16,6 +17,7 @@ function Book(title, author, pages, isRead) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  currIndex = myLibrary.length - 1;
 }
 
 function createBookElement(book, index) {
@@ -52,9 +54,8 @@ function createBookElement(book, index) {
   return bookElem;
 }
 
-function displayBooks() {
-  Array.from(booksList.children).forEach((elem) => elem.remove());
-  for (let i = 0; i < myLibrary.length; i++) {
+function displayNewBooks(index) {
+  for (let i = index; i < myLibrary.length; i++) {
     const bookObj = myLibrary[i];
     const bookNode = createBookElement(bookObj, i);
     booksList.append(bookNode);
@@ -89,10 +90,8 @@ function handleAddBookForm(e) {
   const isRead = e.target.isRead.checked;
   if (title && title !== " " && author != " ") {
     const book = new Book(title, author, pages, isRead);
-    console.log(book);
     addBookToLibrary(book);
-    console.log(myLibrary);
-    displayBooks();
+    displayNewBooks(currIndex);
     clearForm();
     closeForm();
   }

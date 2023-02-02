@@ -7,5 +7,44 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Simple Library</h1>
+      <button class="open-form-btn btn">Add a book</button>
+    </header>
+    <div class="books-container">
+      <ul class="books-list">
+        <li class="book">
+          <p class="book-title">I missed A Prayer</p>
+          <p class="book-author">Islam Jamal</p>
+          <p class="book-pages">210</p>
+          <p class="is-read"></p>
+          <button type="button" class="btn view-button">view</button>
+          <button type="button" class="btn delete-button">delete</button>
+        </li>
+      </ul>
+    </div>
+    <form class="add-book-form">
+      <p>Add a book</p>
+      <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <input type="text" name="author" />
+      </div>
+      <div>
+        <label for="pages">pages</label>
+        <input type="text" name="pages" />
+      </div>
+      <div>
+        <label for="finished">finished</label>
+        <input type="checkbox" />
+      </div>
+      <div>
+        <button class="add-book-btn btn">Add book</button>
+      </div>
+    </form>
+  </body>
 </html>

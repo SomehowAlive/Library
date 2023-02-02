@@ -94,3 +94,42 @@ header {
 .book-pages::after {
   content: " pages";
 }
+
+/* styling the add book form that will be overlayed on top the page */
+
+.add-book-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 2rem 4rem;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.add-book-form > div {
+  width: 400px;
+  padding: 1rem;
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.add-book-form label {
+  font-size: 1.2rem;
+}
+
+.inp {
+  background-color: rgb(233, 233, 233);
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  flex: 0 1 250px;
+  padding: 0.25rem 0.8rem;
+}

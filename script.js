@@ -28,7 +28,8 @@ function createBookElement(book, index) {
   const viewBtn = document.createElement("button");
   const delBtn = document.createElement("button");
 
-  bookElem.classList.add("book", book.isRead ? "read" : "");
+  bookElem.classList.add("book");
+  book.isRead ? bookElem.classList.add("read") : "";
   bookElem.setAttribute("data-id", index);
   titleElem.classList.add("book-title");
   authorElem.classList.add("book-author");
@@ -71,6 +72,21 @@ function closeForm() {
   overlay.classList.add("hidden");
   addBookForm.classList.add("hidden");
 }
+function handleAddBookForm(e) {
+  e.preventDefault();
+  const title = e.target.title.value;
+  const author = e.target.author.value;
+  const pages = e.target.title.value;
+  const isRead = e.target.isRead.checked;
+  if (title && title !== " " && author != " ") {
+    const book = new Book(title, author, pages, isRead);
+    console.log(book);
+    addBookToLibrary(book);
+    console.log(myLibrary);
+    displayBooks();
+  }
+}
 
 openFormBtn.addEventListener("click", openForm);
 closeFormBtn.addEventListener("click", closeForm);
+addBookForm.addEventListener("submit", handleAddBookForm);

@@ -53,6 +53,7 @@ function createBookElement(book, index) {
 }
 
 function displayBooks() {
+  Array.from(booksList.children).forEach((elem) => elem.remove());
   for (let i = 0; i < myLibrary.length; i++) {
     const bookObj = myLibrary[i];
     const bookNode = createBookElement(bookObj, i);
@@ -72,11 +73,19 @@ function closeForm() {
   overlay.classList.add("hidden");
   addBookForm.classList.add("hidden");
 }
+
+function clearForm() {
+  addBookForm.title.value = "";
+  addBookForm.author.value = "";
+  addBookForm.pages.value = 1;
+  addBookForm.isRead.checked = false;
+}
+
 function handleAddBookForm(e) {
   e.preventDefault();
   const title = e.target.title.value;
   const author = e.target.author.value;
-  const pages = e.target.title.value;
+  const pages = e.target.pages.value;
   const isRead = e.target.isRead.checked;
   if (title && title !== " " && author != " ") {
     const book = new Book(title, author, pages, isRead);
@@ -84,6 +93,8 @@ function handleAddBookForm(e) {
     addBookToLibrary(book);
     console.log(myLibrary);
     displayBooks();
+    clearForm();
+    closeForm();
   }
 }
 

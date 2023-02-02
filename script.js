@@ -43,3 +43,11 @@ function createBookElement(book, index) {
 
   return bookElem;
 }
+
+function displayBooks() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    const bookObj = myLibrary[i];
+    const bookNode = createBookElement(bookObj, i);
+    booksList.append(bookNode);
+  }
+}

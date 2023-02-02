@@ -14,20 +14,32 @@ function addBookToLibrary(book) {
 }
 
 function createBookElement(book, index) {
-  const bookElem = document.createElement(`
-  <li class="book ${book.isRead ? "read" : ""} data-id="${index}">
-    <p class="book-title">${book.title}</p>
-    <p class="book-author">${book.author}</p>
-    <p class="book-pages">${book.pages}</p>
-    <button type="button" class="btn view-button">view</button>
-    <button type="button" class="btn delete-button">delete</button>
-  </li>`);
-  return bookElem;
-}
+  const bookElem = document.createElement("li");
 
-function displayBooks() {
-  for (let i = 0; i < myLibrary; i++) {
-    const bookElem = createBookElement(myLibrary[i], i);
-    booksList.append(bookElem);
-  }
+  const titleElem = document.createElement("p");
+  const authorElem = document.createElement("p");
+  const pagesELem = document.createElement("p");
+
+  const viewBtn = document.createElement("button");
+  const delBtn = document.createElement("button");
+
+  bookElem.classList.add("book", book.isRead ? "read" : "");
+  bookElem.setAttribute("data-id", index);
+  titleElem.classList.add("book-title");
+  authorElem.classList.add("book-author");
+  pagesELem.classList.add("book-page");
+  viewBtn.classList.add("btn", "view-button");
+  delBtn.classList.add("btn", "delete-button");
+
+  titleElem.innerText = book.title;
+  authorElem.innerText = book.author;
+  pagesELem.innerText = book.pages;
+
+  bookElem.append(titleElem);
+  bookElem.append(authorElem);
+  bookElem.append(pagesELem);
+  bookElem.append(viewBtn);
+  bookElem.append(delBtn);
+
+  return bookElem;
 }

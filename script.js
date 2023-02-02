@@ -34,6 +34,8 @@ function createBookElement(book, index) {
   titleElem.innerText = book.title;
   authorElem.innerText = book.author;
   pagesELem.innerText = book.pages;
+  viewBtn.innerText = "view";
+  delBtn.innerText = "delete";
 
   bookElem.append(titleElem);
   bookElem.append(authorElem);

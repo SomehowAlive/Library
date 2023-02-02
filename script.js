@@ -57,3 +57,12 @@ function displayBooks() {
     booksList.append(bookNode);
   }
 }
+
+/* dom functions and event handling */
+
+function openForm() {
+  overlay.classList.remove("hidden");
+  setTimeout(() => addBookForm.classList.remove("hidden"), 50);
+}
+
+openFormBtn.addEventListener("click", openForm);

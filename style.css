@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 2rem 6rem;
-  background-color: rgb(9, 102, 105);
+  background-color: rgb(2, 107, 102);
   color: white;
 }
 
@@ -96,12 +96,19 @@ header {
 }
 
 /* styling the add book form that will be overlayed on top the page */
-
-.add-book-form {
-  position: absolute;
+.overlay {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-book-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,6 +125,7 @@ header {
   align-self: flex-start;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   gap: 20px;
 }
 
@@ -131,5 +139,11 @@ header {
   border: none;
   border-radius: 20px;
   flex: 0 1 250px;
-  padding: 0.25rem 0.8rem;
+  padding: 0.8rem 1.2rem;
+}
+.add-book-btn {
+  background-color: rgb(2, 107, 102);
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.5rem 4rem;
 }

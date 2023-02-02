@@ -107,8 +107,8 @@ function clearForm() {
 
 function handleAddBookForm(e) {
   e.preventDefault();
-  const title = e.target.title.value;
-  const author = e.target.author.value;
+  const title = e.target.title.value.trim();
+  const author = e.target.author.value.trim();
   const pages = e.target.pages.value;
   const isRead = e.target.isRead.checked;
   if (title && title !== " " && author != " ") {

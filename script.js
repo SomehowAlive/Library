@@ -30,6 +30,16 @@ function deleteBookElem(e) {
   e.target.parentElement.remove();
 }
 
+function toggleBookRead(index) {
+  myLibrary[index].isRead = !myLibrary[index].isRead;
+}
+
+function makeBookReadhandler(e) {
+  const index = e.target.parentElement.getAttribute("data-id");
+  toggleBookRead(index);
+  e.target.parentElement.classList.toggle("read");
+}
+
 function createBookElement(book, index) {
   const bookElem = document.createElement("li");
 
@@ -55,6 +65,7 @@ function createBookElement(book, index) {
   viewBtn.innerText = "view";
   delBtn.innerText = "delete";
 
+  viewBtn.addEventListener("click", makeBookReadhandler);
   delBtn.addEventListener("click", deleteBookElem);
 
   bookElem.append(titleElem);

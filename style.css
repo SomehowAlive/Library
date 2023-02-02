@@ -129,12 +129,12 @@ header {
   border-radius: 20px;
   background-color: white;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.5s ease;
+  transition: 0.8s ease;
 }
 
-.add-book-form.hide {
+.add-book-form.hidden {
   translate: -100vw 0;
-  transition: 0.5s ease;
+  transition: 0.8s ease;
 }
 
 .add-book-form > div {

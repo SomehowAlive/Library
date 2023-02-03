@@ -111,7 +111,7 @@ function handleAddBookForm(e) {
   const author = e.target.author.value.trim();
   const pages = e.target.pages.value;
   const isRead = e.target.isRead.checked;
-  if (title && title !== " " && author != " ") {
+  if (title && title !== " " && author !== " ") {
     const book = new Book(title, author, pages, isRead);
     addBookToLibrary(book);
     displayNewBooks(currIndex);

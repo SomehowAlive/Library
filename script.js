@@ -77,8 +77,9 @@ function createBookElement(book, index) {
   return bookElem;
 }
 
-function displayNewBooks(index) {
-  for (let i = index; i < myLibrary.length; i++) {
+function displayBooks() {
+  Array.from(booksList.children).forEach((c) => c.remove());
+  for (let i = 0; i < myLibrary.length; i++) {
     const bookObj = myLibrary[i];
     const bookNode = createBookElement(bookObj, i);
     booksList.append(bookNode);
@@ -114,7 +115,7 @@ function handleAddBookForm(e) {
   if (title && title !== " " && author !== " ") {
     const book = new Book(title, author, pages, isRead);
     addBookToLibrary(book);
-    displayNewBooks(currIndex);
+    displayBooks();
     clearForm();
     closeForm();
   }

@@ -5,24 +5,26 @@ const addBookForm = document.querySelector(".add-book-form");
 const AddBookBtn = document.querySelector(".add-book-btn");
 const closeFormBtn = document.querySelector(".close-form-btn");
 
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
+
+  addBookToLibrary() {
+    myLibrary.push(this);
+    currIndex = myLibrary.length - 1;
+  }
+
+  removeBookFromLibrary(index) {
+    myLibrary = myLibrary.splice(index, 1);
+  }
+}
+
 let myLibrary = [];
 let currIndex = -1;
-
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-}
-
-function addBookToLibrary(book) {
-  myLibrary.push(book);
-  currIndex = myLibrary.length - 1;
-}
-
-function removeBookFromLibrary(index) {
-  myLibrary = myLibrary.splice(index, 1);
-}
 
 function deleteBookElem(e) {
   const index = e.target.parentElement.getAttribute("data-id");
@@ -40,7 +42,7 @@ function makeBookReadhandler(e) {
   e.target.parentElement.classList.toggle("read");
 }
 
-function createBookElement(book, index) {
+function createBookNode(book, index) {
   const bookElem = document.createElement("li");
 
   const titleElem = document.createElement("p");
@@ -81,12 +83,10 @@ function displayBooks() {
   Array.from(booksList.children).forEach((c) => c.remove());
   for (let i = 0; i < myLibrary.length; i++) {
     const bookObj = myLibrary[i];
-    const bookNode = createBookElement(bookObj, i);
+    const bookNode = createBookNode(bookObj, i);
     booksList.append(bookNode);
   }
 }
-
-/* dom functions and event handling */
 
 function openForm() {
   overlay.classList.remove("hidden");
@@ -114,7 +114,7 @@ function handleAddBookForm(e) {
   const isRead = e.target.isRead.checked;
   if (title && author) {
     const book = new Book(title, author, pages, isRead);
-    addBookToLibrary(book);
+    book.addBookToLibrary();
     displayBooks();
     clearForm();
     closeForm();

@@ -28,7 +28,7 @@ let currIndex = -1;
 
 function deleteBookElem(e) {
   const index = e.target.parentElement.getAttribute("data-id");
-  removeBookFromLibrary(index);
+  myLibrary[index].removeBookFromLibrary();
   e.target.parentElement.remove();
 }
 
